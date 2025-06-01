@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About – KITE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="about-styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.7s;
+    }
+    body.loaded { opacity: 1;}
+    body.fade-out { opacity: 0;}
+    .cta-btn, .buy-btn {
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover, .buy-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 24px rgba(53,230,185,0.13);
+    }
+    .nav-links li a {
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #35e6b9;
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+    }
+    .nav-links li a:hover::after, .nav-links li a.active::after {
+      width: 100%;
+    }
+    /* About page custom styles (from your style block) */
+    .about-hero {
+      background: url('about-bg.jpg') center center/cover no-repeat;
+      min-height: 50vh;
+      align-items: flex-end;
+    }
+    .about-main {
+      max-width: 900px;
+      margin: -80px auto 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      padding: 48px 32px 32px 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .about-content h2 {
+      margin-top: 36px;
+      color: #35e6b9;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .about-content ul {
+      padding-left: 22px;
+      margin-bottom: 24px;
+    }
+    .about-content ul li {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+    .team {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+      margin-top: 16px;
+    }
+    .team-member {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 1px 8px rgba(0,0,0,0.03);
+      flex-basis: 300px;
+      flex-grow: 1;
+      margin-bottom: 16px;
+    }
+    .team-photo {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #35e6b9;
+      box-shadow: 0 2px 10px rgba(53,230,185,0.07);
+    }
+    .team-member h3 {
+      margin: 0 0 4px 0;
+      font-size: 1.15rem;
+      color: #222;
+    }
+    .team-member span {
+      font-size: 0.97rem;
+      color: #35e6b9;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .team-member p {
+      margin: 0;
+      color: #444;
+      font-size: 1rem;
+      margin-top: 2px;
+    }
+    @media (max-width: 700px) {
+      .about-main {
+        max-width: 99vw;
+        padding: 18px 4vw 12vw 4vw;
+      }
+      .team {
+        flex-direction: column;
+        gap: 14px;
+      }
+    }
+    @media (max-width: 600px) {
+      .about-main {
+        margin-top: -40px;
+        border-radius: 6px;
+        padding: 18px 2vw 10vw 2vw;
+      }
+      .team-member {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      .team-photo {
+        width: 54px;
+        height: 54px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">KITE</div>
+    <ul class="nav-links">
+      <li><a href="/web_dev/Index/Lobby.html">Home</a></li>
+      <li><a href="#" class="active">About</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Blocks <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Block Library</a></li>
+          <li><a href="#">Premium Blocks</a></li>
+          <li><a href="#">Documentation</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Patterns</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Templates <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Homepage</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Shop <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Buy Blocks</a></li>
+          <li><a href="#">Buy Patterns</a></li>
+          <li><a href="#">Buy Templates</a></li>
+        </ul>
+      </li>
+      <li><a href="/web_dev/Contact/contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="buy-btn">Buy KITE</button>
+      <span class="cart-icon">&#128722;</span>
+    </div>
+  </nav>
+
+  <!-- About Hero Section -->
+  <section class="hero about-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>About KITE</h1>
+      <p>
+        <b>KITE</b> is not just another WordPress theme—it's a next-generation block-based toolkit for creators, designers, and developers who want full control, creative freedom, and optimal performance directly in the WordPress full site editor.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Main Content -->
+  <section class="about-main">
+    <div class="about-content">
+      <h2>Our Mission</h2>
+      <p>
+        We believe that building beautiful, fast, and customizable websites should be simple and accessible to everyone. With KITE, you can design every part of your website visually, without relying on clunky page builders or endless plugins. Our goal is to empower you to create unique experiences, faster than ever.
+      </p>
+
+      <h2>What Makes KITE Unique?</h2>
+      <ul>
+        <li><b>100% Block-Based:</b> True full site editing—change headers, footers, templates & more visually.</li>
+        <li><b>Performance-First:</b> Lightweight, fast-loading, and optimized for speed out of the box.</li>
+        <li><b>Pixel-Perfect Design:</b> Modern layouts, beautiful patterns, and a curated block library.</li>
+        <li><b>Endless Customization:</b> Tweak every detail directly in the editor—no code required (unless you want to!).</li>
+        <li><b>Seamless Integration:</b> Works with your favorite WordPress plugins and tools.</li>
+      </ul>
+
+      <h2>Who Is KITE For?</h2>
+      <p>
+        <b>KITE</b> is perfect for freelancers, agencies, businesses, bloggers, and anyone who wants to build a unique WordPress site without compromise. Whether you're a pro or just getting started, KITE puts powerful design tools at your fingertips.
+      </p>
+
+      <h2>Meet the Team</h2>
+      <div class="team">
+        <div class="team-member">
+          <img src="founder.jpg" alt="Founder" class="team-photo">
+          <div>
+            <h3>Alex Carter</h3>
+            <span>Founder & Lead Designer</span>
+            <p>Alex is passionate about user experience and modern web design. He leads KITE with a vision for creativity and innovation in WordPress.</p>
+          </div>
+        </div>
+        <div class="team-member">
+          <img src="dev.jpg" alt="Developer" class="team-photo">
+          <div>
+            <h3>Jordan Lee</h3>
+            <span>Lead Developer</span>
+            <p>Jordan builds robust, high-performance code to ensure KITE remains fast, flexible, and future-proof.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2>Get in Touch</h2>
+      <p>
+        We love feedback and welcome your questions! <a href="/web dev/Contact/contact.html">Contact us</a> any time, or join our community to share your ideas.
+      </p>
+    </div>
+  </section>
+
+  <script>
+    // Fade-in and fade-out transitions for page navigation
+    window.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.hasAttribute('target') &&
+        !link.href.startsWith('mailto:') &&
+        !link.href.startsWith('tel:')
+      ) {
+        link.addEventListener('click', function(e) {
+          const href = link.getAttribute('href');
+          if (
+            href &&
+            !href.startsWith('#') &&
+            !link.classList.contains('no-fade')
+          ) {
+            e.preventDefault();
+            document.body.classList.remove('loaded');
+            document.body.classList.add('fade-out');
+            setTimeout(function() {
+              window.location.href = href;
+            }, 600);
+          }
+        });
+      }
+    });
+
+    // Dropdown functionality
+    document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.dropdown').forEach(function(drop) {
+          if (drop.contains(btn)) {
+            drop.classList.toggle('open');
+          } else {
+            drop.classList.remove('open');
+          }
+        });
+      });
+    });
+    window.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(function(drop) {
+          drop.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

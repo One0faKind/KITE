@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – KITE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="contact-styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.7s;
+    }
+    body.loaded { opacity: 1;}
+    body.fade-out { opacity: 0;}
+    .cta-btn, .buy-btn {
+      transition: background 0.2s, color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover, .buy-btn:hover {
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 6px 24px rgba(53,230,185,0.13);
+    }
+    .nav-links li a {
+      position: relative;
+    }
+    .nav-links li a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      width: 0;
+      background: #35e6b9;
+      transition: width 0.3s;
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+    }
+    .nav-links li a:hover::after, .nav-links li a.active::after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">KITE</div>
+    <ul class="nav-links">
+      <li><a href="/web_dev/Index/Lobby.html">Home</a></li>
+      <li><a href="/web_dev/About/about.html">About</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Blocks <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Block Library</a></li>
+          <li><a href="#">Premium Blocks</a></li>
+          <li><a href="#">Documentation</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Patterns</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Templates <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Homepage</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Shop <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Buy Blocks</a></li>
+          <li><a href="#">Buy Patterns</a></li>
+          <li><a href="#">Buy Templates</a></li>
+        </ul>
+      </li>
+      <li><a href="#" class="active">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="buy-btn">Buy KITE</button>
+      <span class="cart-icon">&#128722;</span>
+    </div>
+  </nav>
+
+  <!-- Contact Hero Section -->
+  <section class="hero contact-hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>
+        We're here to help, listen, and collaborate.<br>
+        Reach out to the KITE team and we'll get back to you soon!
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Main Content -->
+  <section class="contact-main">
+    <div class="contact-content">
+      <h2>Send Us a Message</h2>
+      <form class="contact-form" autocomplete="off" action="https://formspree.io/f/xeokjrog" method="POST">
+        <div class="form-row">
+          <div class="input-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="you@email.com" required>
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+        </div>
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="cta-btn">Send Message</button>
+      </form>
+
+      <div class="contact-details">
+        <h2>Other Ways to Reach Us</h2>
+        <ul>
+          <li>
+            <b>Email:</b> <a href="mailto:support@webname">support@webname</a>
+          </li>
+          <li>
+            <b>Twitter/X:</b> <a href="https://twitter.com/" target="_blank">@_blank</a>
+          </li>
+          <li>
+            <b>Community Forum:</b> <a href="#">Join our KITE Community</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Fade-in and fade-out transitions for page navigation
+    window.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('loaded');
+    });
+
+    document.querySelectorAll('a').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.hasAttribute('target') &&
+        !link.href.startsWith('mailto:') &&
+        !link.href.startsWith('tel:')
+      ) {
+        link.addEventListener('click', function(e) {
+          const href = link.getAttribute('href');
+          if (
+            href &&
+            !href.startsWith('#') &&
+            !link.classList.contains('no-fade')
+          ) {
+            e.preventDefault();
+            document.body.classList.remove('loaded');
+            document.body.classList.add('fade-out');
+            setTimeout(function() {
+              window.location.href = href;
+            }, 600);
+          }
+        });
+      }
+    });
+
+    // Dropdown functionality
+    document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.dropdown').forEach(function(drop) {
+          if (drop.contains(btn)) {
+            drop.classList.toggle('open');
+          } else {
+            drop.classList.remove('open');
+          }
+        });
+      });
+    });
+    window.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        document.querySelectorAll('.dropdown').forEach(function(drop) {
+          drop.classList.remove('open');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
