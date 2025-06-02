@@ -262,6 +262,28 @@ body.fade-out {
   justify-content: center;
   min-width: 0;
 }
+
+.gallery-main {
+  width: 100%;
+  max-width: 600px;
+  overflow: hidden;  /* Prevents images from overflowing and covering text */
+  position: relative;
+  border-radius: 3px;
+}
+
+.gallery-main img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  border-radius: 3px;
+  background: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
 .content-col {
   flex: 1 1 42%;
   padding: 32px 24px;
@@ -285,17 +307,6 @@ body.fade-out {
   }
 }
 
-.gallery-main img {
-  width: 100%;
-  max-width: 100%;
-  max-height: 280px;
-  object-fit: cover;
-  border-radius: 3px;
-  background: #f9f9f9;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-}
-
-/* --- Sliding Animations for side slider --- */
 .slide-out-left {
   animation: slideOutLeft 0.6s forwards;
 }
