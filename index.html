@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KITE – Discover Trends & Hidden Wonders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">KITE</div>
+    <button class="nav-toggle" aria-label="Open menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Categories<span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Beautiful Spots</a></li>
+          <li><a href="#">Tech Trends</a></li>
+          <li><a href="#">Games</a></li>
+          <li><a href="#">Travel Guides</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Patterns</a></li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Templates <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Homepage</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <button class="dropdown-toggle">Shop <span>&#x25BC;</span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">Buy Blocks</a></li>
+          <li><a href="#">Buy Patterns</a></li>
+          <li><a href="#">Buy Templates</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="auth-actions">
+      <a href="login.html" class="auth-btn login-btn">Login</a>
+      <a href="signup.html" class="auth-btn signup-btn">Sign Up</a>
+    </div>
+  </nav>
+
+  <!-- Hero section with static background -->
+  <section class="hero">
+    <div class="hero-bg-static"></div>
+    <div class="hero-content">
+      <h1>Discover Trends &amp; Hidden Wonders<br> Around the World</h1>
+      <p>
+        Dive into KITE and uncover the world’s most beautiful places, fascinating cultures, and the latest trends shaping our lives.<br>
+        From urban sunsets to tranquil nights and inspiring journeys, we share stories, insights, and discoveries from every corner of the globe.<br>
+        Join our community of explorers, dreamers, and storytellers – and let your curiosity take flight!
+      </p>
+    </div>
+    <div class="hero-fade-bottom"></div>
+  </section>
+
+  <!-- Slider + Content Side by Side Section -->
+  <section class="slider-content-row">
+    <!-- Left: Slider area -->
+    <div class="slider-col">
+      <div class="gallery-slider">
+        <div class="gallery-main">
+          <img id="mainImage" src="1.jpg" alt="Gallery Image">
+        </div>
+      </div>
+    </div>
+    <!-- Right: Content area -->
+    <div class="content-col">
+      <h2>Welcome to KITE</h2>
+      <p>
+        Post anything here! This area is for your content, news, or even a call-to-action.<br>
+        <strong>You can add text, images, or even a signup form.</strong>
+      </p>
+      <a href="#" class="cta-btn">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Alternating Info Rows -->
+  <section class="info-row">
+    <div class="info-image">
+      <img src="c1.jpg" alt="Sunset from the Apartment">
+    </div>
+    <div class="info-text">
+      <h3>Sunset from the Apartment</h3>
+      <p>This image shows a cozy, lived-in apartment interior with large windows opening to a panoramic cityscape at sunset. The warm orange glow of the setting sun bathes the city and sky in golden hues, creating a peaceful and nostalgic atmosphere.</p>
+    </div>
+  </section>
+
+  <section class="info-row reverse">
+    <div class="info-image">
+      <img src="c2.jpg" alt="Evening Stroll by the Tracks">
+    </div>
+    <div class="info-text">
+      <h3>Evening Stroll by the Tracks</h3>
+      <p>A solitary figure walks along overgrown train tracks in a quiet neighborhood as the sun sets in the background. The sky is painted with vibrant orange and pink tones, giving the scene a tranquil yet wistful feeling.</p>
+    </div>
+  </section>
+
+  <section class="info-row">
+    <div class="info-image">
+      <img src="c3.jpg" alt="Rainy Night at the Station">
+    </div>
+    <div class="info-text">
+      <h3>Rainy Night at the Station</h3>
+      <p>This image depicts a small, rural train station illuminated by the neon glow of platform lights during a rainy night. The wet ground reflects the lights, and the surrounding greenery and dark clouds create a moody, atmospheric scene.</p>
+    </div>
+  </section>
+
+  <!-- Trending Section (Game-style Cards) -->
+  <section class="trending-section-alt">
+    <h2 class="trending-headline">What's on Trending</h2>
+    <div class="trending-cards-row">
+      <div class="trend-card-alt">
+        <img src="T1.jpg" alt="Grand Theft Auto V">
+        <div class="trend-card-alt-info">
+          <h3>Grand Theft Auto V</h3>
+        </div>
+      </div>
+      <div class="trend-card-alt">
+        <img src="T2.jpg" alt="Counter-Strike 2">
+        <div class="trend-card-alt-info">
+          <h3>Counter-Strike 2</h3>
+        </div>
+      </div>
+      <div class="trend-card-alt">
+        <img src="T3.jpg" alt="Elden Ring Nightreign">
+        <div class="trend-card-alt-info">
+          <h3>Elden Ring Nightreign</h3>
+        </div>
+      </div>
+      <div class="trend-card-alt">
+        <img src="T4.jpg" alt="Minecraft">
+        <div class="trend-card-alt-info">
+          <h3>Minecraft</h3>
+        </div>
+      </div>
+      <!-- Add more cards as needed -->
+    </div>
+  </section>
+
+  <!-- Footer Start -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="footer-logo">KITE</span>
+        <p class="footer-description">
+          Exploring trends & wonders, powered by <strong>0ne0fakind</strong>.
+        </p>
+      </div>
+      <nav class="footer-links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="P&P.html">Privacy Policy</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://twitter.com/" target="_blank" aria-label="Twitter">
+          <svg width="22" height="22" fill="#35e6b9" viewBox="0 0 24 24"><path d="M24 4.56a9.93 9.93 0 0 1-2.83.78A4.94 4.94 0 0 0 23.34 3c-.94.56-1.97.97-3.07 1.19A4.92 4.92 0 0 0 16.67 3c-2.7 0-4.89 2.18-4.89 4.88 0 .38.04.75.12 1.1C7.69 8.8 4.07 6.85 1.64 3.88c-.41.7-.63 1.5-.63 2.36 0 1.63.83 3.06 2.08 3.89a4.92 4.92 0 0 1-2.22-.62v.06c0 2.28 1.63 4.18 3.8 4.62a5.05 5.05 0 0 1-2.21.08c.62 1.93 2.42 3.34 4.56 3.37A9.87 9.87 0 0 1 0 21.54c2.18 1.4 4.77 2.22 7.56 2.22 9.05 0 14-7.5 14-14v-.64A9.94 9.94 0 0 0 24 4.56z"/></svg>
+        </a>
+        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
+          <svg width="22" height="22" fill="#35e6b9" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.584.012 4.847.07 1.17.056 1.97.24 2.43.405a4.92 4.92 0 0 1 1.77 1.02 4.92 4.92 0 0 1 1.02 1.77c.165.46.349 1.26.405 2.43.058 1.263.07 1.647.07 4.847s-.012 3.584-.07 4.847c-.056 1.17-.24 1.97-.405 2.43a4.92 4.92 0 0 1-1.02 1.77 4.92 4.92 0 0 1-1.77 1.02c-.46.165-1.26.349-2.43.405-1.263.058-1.647.07-4.847.07s-3.584-.012-4.847-.07c-1.17-.056-1.97-.24-2.43-.405a4.92 4.92 0 0 1-1.77-1.02 4.92 4.92 0 0 1-1.02-1.77c-.165-.46-.349-1.26-.405-2.43C2.212 15.584 2.2 15.2 2.2 12s.012-3.584.07-4.847c.056-1.17.24-1.97.405-2.43a4.92 4.92 0 0 1 1.02-1.77A4.92 4.92 0 0 1 5.395 2.7c.46-.165 1.26-.349 2.43-.405C8.416 2.212 8.8 2.2 12 2.2zm0-2.2C8.74 0 8.332.012 7.052.07c-1.276.058-2.147.25-2.89.53A7.07 7.07 0 0 0 .6 2.163a7.07 7.07 0 0 0-1.563 1.563c-.28.743-.472 1.614-.53 2.89C.012 8.332 0 8.74 0 12c0 3.26.012 3.668.07 4.948.058 1.276.25 2.147.53 2.89A7.07 7.07 0 0 0 2.163 23.4a7.07 7.07 0 0 0 1.563 1.563c.743.28 1.614.472 2.89.53C8.332 23.988 8.74 24 12 24s3.668-.012 4.948-.07c1.276-.058 2.147-.25 2.89-.53a7.07 7.07 0 0 0 1.563-1.563 7.07 7.07 0 0 0 1.563-1.563c.28-.743.472-1.614.53-2.89C23.988 15.668 24 15.26 24 12c0-3.26-.012-3.668-.07-4.948-.058-1.276-.25-2.147-.53-2.89A7.07 7.07 0 0 0 21.837.6 7.07 7.07 0 0 0 20.274-.963c-.743-.28-1.614-.472-2.89-.53C15.668.012 15.26 0 12 0z"/><circle cx="12" cy="12" r="3.2"/><circle cx="18.406" cy="5.594" r="1.44"/></svg>
+        </a>
+        <a href="mailto:your@email.com" aria-label="Email">
+          <svg width="22" height="22" fill="#35e6b9" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20v-9l8 7 8-7v9H4z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 0ne0fakind. All rights reserved.</span>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <script src="command.js"></script>
+</body>
+</html>
